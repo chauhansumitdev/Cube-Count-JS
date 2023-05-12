@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- adding custom google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Cube-Count</title>
+
+  <!-- all css styles -->
+  <style>
+    *{
+    font-family: 'Josefin Sans', sans-serif;
+}
+body {
+    background-color: rgb(116, 116, 195);
+  }
+
+  .container {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+    position: fixed; /* or absolute */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+  }
+
+  .titletxt{
+    display: block;
+    font-size: 1.5em;
+    margin-left: 26%;
+    margin-top: 5%;
+  }
+  .score{
+    margin-left: 35%;
+  }
+
+  .cube{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 0);
+  }
+
+  .hidden {
+    display: none;
+  }
+  </style>
+
+  <!------------Contents ------------>
+</head>
+<body>
+<div class="container">
+  <h1 class="titletxt">Click On The Cubes</h1>
+  <p class="score">Current Score : <span class="counter">0</span></p>
+  <div class="cube"></div>
+</div>
+<!-- ------------------------------ -->
+
+<!-- javascript file begins here -->
+<script>
+    
+    var cube = document.querySelector('.cube');
+    cube.classList.add('hidden');
+    function blink() {
+      cube.classList.toggle('hidden');
+    }
+    setInterval(blink,1000);
+    
+</script>
+</body>
