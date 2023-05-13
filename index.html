@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cube-Count</title>
 
   <!-- all css styles -->
@@ -25,7 +25,7 @@ body {
     margin: auto;
     background-color: white;
     border-radius: 20px;
-    position: fixed; /* or absolute */
+    position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -64,6 +64,45 @@ body {
     padding: 5px;
 
   }
+
+  @media (min-width :400px ) and (max-width : 950px)  {
+    .container{
+      width: 300px;
+      height:300px;
+      border-radius:10px;
+    }
+
+    .titletxt{
+    display: block;
+    font-size: 1em;
+    margin-left: 26%;
+    margin-top: 5%;
+  }
+
+  .score{
+    margin-left: 35%;
+    font-size:0.7em ;
+  }
+
+  #outer{
+    position: relative;
+    width: 250px;
+    height: 200px;
+    border:1px solid black;
+    margin-left: 20px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .cube{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(214, 43, 0);
+    border-radius: 2px;
+  }
+
+
   </style>
 
   <!------------Contents ------------>
