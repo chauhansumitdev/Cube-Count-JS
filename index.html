@@ -102,7 +102,7 @@ body {
     border-radius: 2px;
   }
 
-
+}
   </style>
 
   <!------------Contents ------------>
@@ -118,13 +118,46 @@ body {
 
 <!-- javascript file begins here -->
 <script>
-    
-    var cube = document.querySelector('.cube');
+var outer = document.getElementById('outer');
+var cube = document.querySelector('.cube');
+cube.classList.add('hidden');
+
+console.log(outer.offsetWidth);
+
+var screenTypeWidth = 0;
+var screenTypeHeight =0;
+if(outer.offsetWidth == 262 ){
+  screenTypeWidth = 218;
+  screenTypeHeight = 168; 
+}
+else{
+  screenTypeWidth =356;
+  screenTypeHeight=306
+}
+
+console.log(screenTypeWidth);
+console.log(screenTypeHeight);
+
+function getRandomPosition() {
+  var x = Math.floor(Math.random() * screenTypeWidth);
+  var y = Math.floor(Math.random() * screenTypeHeight);  
+  return [x, y];
+}
+
+function spawnCube() {
+  var position = getRandomPosition();
+  cube.style.left = position[0] + 'px';
+  cube.style.top = position[1] + 'px';
+  cube.classList.remove('hidden');
+  setTimeout(function() {
     cube.classList.add('hidden');
-    function blink() {
-      cube.classList.toggle('hidden');
-    }
-    setInterval(blink,1000);
+  }, 1000);
+}
+
+setInterval(function() {
+  spawnCube();
+}, 2000);
+
     
 </script>
 </body>
