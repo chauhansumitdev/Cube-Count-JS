@@ -39,7 +39,7 @@ body {
     margin-top: 5%;
   }
   .score{
-    margin-left: 35%;
+    margin-left: 30%;
   }
 
   .cube{
@@ -80,7 +80,7 @@ body {
   }
 
   .score{
-    margin-left: 35%;
+    margin-left: 30%;
     font-size:0.7em ;
   }
 
@@ -110,7 +110,7 @@ body {
 <body>
 <div class="container">
   <h1 class="titletxt">Click On The Cubes</h1>
-  <p class="score">Current Score : <span id="counter">0</span></p>
+  <p class="score">Current Score : <span id="counter">0</span> / <span id="spawnedCubes">0</span></p>
   <div id="outer">
     <div class="cube"></div></div>
 </div>
@@ -144,7 +144,12 @@ function getRandomPosition() {
   return [x, y];
 }
 
+var cubeSpawnedSelect = document.getElementById('spawnedCubes');
+var cubeSpawnedCount = 0;
+
 function spawnCube() {
+  cubeSpawnedCount++;
+  cubeSpawnedSelect.textContent = cubeSpawnedCount;
   var position = getRandomPosition();
   cube.style.left = position[0] + 'px';
   cube.style.top = position[1] + 'px';
