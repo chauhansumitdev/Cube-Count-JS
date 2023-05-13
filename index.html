@@ -14,6 +14,7 @@
     *{
     font-family: 'Josefin Sans', sans-serif;
 }
+
 body {
     background-color: rgb(116, 116, 195);
   }
@@ -45,11 +46,22 @@ body {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: rgb(255, 255, 0);
+    background-color: rgb(214, 43, 0);
+    border-radius: 5px;
   }
 
   .hidden {
     display: none;
+  }
+
+  #outer{
+    position: relative;
+    width: 400px;
+    height: 350px;
+    border:2px solid black;
+    margin-left: 50px;
+    border-radius: 10px;
+
   }
   </style>
 
@@ -59,6 +71,7 @@ body {
 <div class="container">
   <h1 class="titletxt">Click On The Cubes</h1>
   <p class="score">Current Score : <span class="counter">0</span></p>
+  <div id="outer"></div>
   <div class="cube"></div>
 </div>
 <!-- ------------------------------ -->
