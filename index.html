@@ -106,7 +106,7 @@ body {
 }
   </style>
 
-  <!------------Contents ------------>
+  <!------------Display Contents ------------>
 </head>
 <body>
 <div class="container">
@@ -117,17 +117,17 @@ body {
 </div>
 <!-- ------------------------------ -->
 
-<!-- javascript file begins here -->
+<!-- javascript code begins here -->
 <script>
-var outer = document.getElementById('outer');
-var cube = document.querySelector('.cube');
-cube.classList.add('hidden');
+var outer = document.getElementById('outer');   // selects outer div
+var cube = document.querySelector('.cube');     // selects cube
+cube.classList.add('hidden');                   // adds style of hidden to cube div
 
-console.log(outer.offsetWidth);
-
-var screenTypeWidth = 0;
-var screenTypeHeight =0;
-if(outer.offsetWidth == 262 ){
+console.log(outer.offsetWidth);                 // debugger -> getting size
+ 
+var screenTypeWidth = 0;                        // placing screen resolution width
+var screenTypeHeight =0;                        // placing screen resolution height
+if(outer.offsetWidth == 262 ){                  // setting resolution
   screenTypeWidth = 218;
   screenTypeHeight = 168; 
 }
@@ -136,44 +136,44 @@ else{
   screenTypeHeight=306
 }
 
-console.log(screenTypeWidth);
-console.log(screenTypeHeight);
+console.log(screenTypeWidth);                  // debugger -> width
+console.log(screenTypeHeight);                 // debugger -> height
 
-function getRandomPosition() {
-  var x = Math.floor(Math.random() * screenTypeWidth);
+function getRandomPosition() {                              // function to obtain random location on screen
+  var x = Math.floor(Math.random() * screenTypeWidth);      
   var y = Math.floor(Math.random() * screenTypeHeight);  
   return [x, y];
 }
 
-var cubeSpawnedSelect = document.getElementById('spawnedCubes');
+var cubeSpawnedSelect = document.getElementById('spawnedCubes');       // counter for scores -> spawned cubes
 var cubeSpawnedCount = 0;
 
-function spawnCube() {
+function spawnCube() {                                                 // function to spawn random cubes
   cubeSpawnedCount++;
-  cubeSpawnedSelect.textContent = cubeSpawnedCount;
+  cubeSpawnedSelect.textContent = cubeSpawnedCount;                   
   var position = getRandomPosition();
   cube.style.left = position[0] + 'px';
   cube.style.top = position[1] + 'px';
-  cube.classList.remove('hidden');
+  cube.classList.remove('hidden');                                     // removes previously spawned cubed
   setTimeout(function() {
-    cube.classList.add('hidden');
+    cube.classList.add('hidden');                                      // adds css hidden to cube after 1s
   }, 1000);
 }
 
-setInterval(function() {
+setInterval(function() {                                                 // happens after 2s 
   spawnCube();
 }, 2000);
 
-var counterSelect = document.getElementById('counter');
-var counter =0;
+var counterSelect = document.getElementById('counter');                   // getting span counter element
+var counter =0;                                                           // initialised to zero
 
-var originalColor = cube.style.backgroundColor;
-cube.addEventListener('click', function() {
+var originalColor = cube.style.backgroundColor;                           // saved original cube color -> red
+cube.addEventListener('click', function() {                               //added event listner for acting on clicks
   cube.style.backgroundColor = 'green';
-  counter++;
-  counterSelect.textContent = counter;
+  counter++;                                                               // increment score
+  counterSelect.textContent = counter;                                     // update score
   setTimeout(function() {
-    cube.style.backgroundColor = originalColor;
+    cube.style.backgroundColor = originalColor;                            // revert back color
   }, 1000);
 });
 
