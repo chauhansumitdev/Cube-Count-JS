@@ -1,12 +1,12 @@
 # Square-Count-JS
 🎮 Casual Game Made In JavaScript<br>
 🔴 Game live at - https://chauhansumitdev.github.io/Square-Count-JS/
-***
+
 ## 🕹️ Gameplay :
 1 -> Click/Tap on the squares that spawn at random location on the screen.
 2 ->The progress is shown at the top.
 3 ->Everytime the square is clicked, the counter is incremented by one.
-***
+
 ## 🎥 Visuals : 
 
 ### 🖥️ Desktop ->
