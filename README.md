@@ -14,6 +14,6 @@
 [![Desktop Gameplay 2](/assets/desktop2.png)] 
 
 ### 📱Mobile ->
-[![Mobile Gameplay 1](/assets/mobile1.jpeg)]
+![Mobile Gameplay 1](/assets/mobile1.jpeg)
 [![Mobile Gameplay 2](/assets/mobile2.jpeg)]
 
