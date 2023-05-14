@@ -10,10 +10,10 @@
 ## 🎥 Visuals : 
 
 ### 🖥️ Desktop ->
-![Desktop Gameplay 1](/assets/desktop1.png)
-![Desktop Gameplay 2](/assets/desktop2.png) 
+[![Desktop Gameplay 1](/assets/desktop1.png)]
+[![Desktop Gameplay 2](/assets/desktop2.png)] 
 
 ### 📱Mobile ->
-![Mobile Gameplay 1](/assets/mobile1.jpeg)
-![Mobile Gameplay 2](/assets/mobile2.jpeg)
+[![Mobile Gameplay 1](/assets/mobile1.jpeg)]
+[![Mobile Gameplay 2](/assets/mobile2.jpeg)]
 
