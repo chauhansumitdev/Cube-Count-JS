@@ -3,15 +3,9 @@
 🔴 Game live at - https://chauhansumitdev.github.io/Square-Count-JS/
 
 ## 🕹️ Gameplay :
-<<<<<<< HEAD
-- Click/Tap on the squares that spawn at random location on the screen.<br>
-- The progress is shown at the top.<br>
-- Everytime the square is clicked, the counter is incremented by one.<br>
-=======
 - Click/Tap on the squares that spawn at random location on the screen.
 - The progress is shown at the top.
 - Everytime the square is clicked, the counter is incremented by one.
->>>>>>> d4e5e7a4cc254a3deb2d3b2e63974201d2e38479
 
 ## 🎥 Visuals : 
 
