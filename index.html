@@ -8,175 +8,22 @@
 <link rel="icon" type="image/png" href="assets/logo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
   <title>Square-Count</title>
-
-  <!-- all css styles -->
-  <style>
-    *{
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-body {
-    background-color: rgb(116, 116, 195);
-  }
-
-  .container {
-    width: 500px;
-    height: 500px;
-    margin: auto;
-    background-color: white;
-    border-radius: 20px;
-    position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-  }
-
-  .titletxt{
-    display: block;
-    font-size: 1.5em;
-    margin-left: 26%;
-    margin-top: 5%;
-  }
-  .score{
-    margin-left: 30%;
-  }
-
-  .cube{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: rgb(214, 43, 0);
-    border-radius: 5px;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  #outer{
-    position: relative;
-    width: 400px;
-    height: 350px;
-    border:2px solid black;
-    margin-left: 45px;
-    border-radius: 10px;
-    padding: 5px;
-
-  }
-
-  @media (min-width :350px ) and (max-width : 950px)  {
-    .container{
-      width: 300px;
-      height:300px;
-      border-radius:10px;
-    }
-
-    .titletxt{
-    display: block;
-    font-size: 1em;
-    margin-left: 26%;
-    margin-top: 5%;
-  }
-
-  .score{
-    margin-left: 30%;
-    font-size:0.7em ;
-  }
-
-  #outer{
-    position: relative;
-    width: 250px;
-    height: 200px;
-    border:1px solid black;
-    margin-left: 20px;
-    border-radius: 5px;
-    padding: 5px;
-  }
-
-  .cube{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(214, 43, 0);
-    border-radius: 2px;
-  }
-
-}
-  </style>
-
   <!------------Display Contents ------------>
 </head>
-<body>
-<div class="container">
+<body id="bg">
+<div class="shader">
+<div id="container">
   <h1 class="titletxt">Click On The Square</h1>
   <p class="score">Current Score : <span id="counter">0</span> / <span id="spawnedCubes">0</span></p>
   <div id="outer">
     <div class="cube"></div></div>
 </div>
+</div>
 <!-- ------------------------------ -->
 
 <!-- javascript code begins here -->
-<script>
-var outer = document.getElementById('outer');   // selects outer div
-var cube = document.querySelector('.cube');     // selects cube
-cube.classList.add('hidden');                   // adds style of hidden to cube div
-
-console.log(outer.offsetWidth);                 // debugger -> getting size
- 
-var screenTypeWidth = 0;                        // placing screen resolution width
-var screenTypeHeight =0;                        // placing screen resolution height
-if(outer.offsetWidth == 262 ){                  // setting resolution
-  screenTypeWidth = 218;
-  screenTypeHeight = 168; 
-}
-else{
-  screenTypeWidth =356;
-  screenTypeHeight=306
-}
-
-console.log(screenTypeWidth);                  // debugger -> width
-console.log(screenTypeHeight);                 // debugger -> height
-
-function getRandomPosition() {                              // function to obtain random location on screen
-  var x = Math.floor(Math.random() * screenTypeWidth);      
-  var y = Math.floor(Math.random() * screenTypeHeight);  
-  return [x, y];
-}
-
-var cubeSpawnedSelect = document.getElementById('spawnedCubes');       // counter for scores -> spawned cubes
-var cubeSpawnedCount = 0;
-
-function spawnCube() {                                                 // function to spawn random cubes
-  cubeSpawnedCount++;
-  cubeSpawnedSelect.textContent = cubeSpawnedCount;                   
-  var position = getRandomPosition();
-  cube.style.left = position[0] + 'px';
-  cube.style.top = position[1] + 'px';
-  cube.classList.remove('hidden');                                     // removes previously spawned cubed
-  setTimeout(function() {
-    cube.classList.add('hidden');                                      // adds css hidden to cube after 1s
-  }, 1000);
-}
-
-setInterval(function() {                                                 // happens after 2s 
-  spawnCube();
-}, 2000);
-
-var counterSelect = document.getElementById('counter');                   // getting span counter element
-var counter =0;                                                           // initialised to zero
-
-var originalColor = cube.style.backgroundColor;                           // saved original cube color -> red
-cube.addEventListener('click', function() {                               //added event listner for acting on clicks
-  cube.style.backgroundColor = 'green';
-  counter++;                                                               // increment score
-  counterSelect.textContent = counter;                                     // update score
-  setTimeout(function() {
-    cube.style.backgroundColor = originalColor;                            // revert back color
-  }, 1000);
-});
-
-    
-</script>
+<script src="script.js"></script>
 </body>
+</html>
